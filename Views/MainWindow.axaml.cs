@@ -5,9 +5,14 @@ using System;
 
 namespace ProjectAvaloniaTest.Views;
 
+// Doc Util
+// https://learn.microsoft.com/en-us/dotnet/api/system.timespan.tostring?view=net-7.0#System_TimeSpan_ToString_System_String_
+// https://api-docs.avaloniaui.net/docs/T_Avalonia_Threading_DispatcherTimer
+// https://api-docs.avaloniaui.net/docs/T_Avalonia_Interactivity_RoutedEventArgs
+
 public partial class MainWindow : Window
 {
-    private DispatcherTimer _timer;
+    private DispatcherTimer timer;
     private TimeSpan timeRemaining;
     private bool isRunning;
 
@@ -17,24 +22,24 @@ public partial class MainWindow : Window
         timeRemaining = TimeSpan.FromMinutes(25);
         UpdateTExt();
 
-        _timer = new DispatcherTimer
+        timer = new DispatcherTimer
         {
             Interval = TimeSpan.FromSeconds(1)
         };
-        _timer.Tick += Timer_Tick;
+        timer.Tick += Timer_Tick;
     }
 
     private void StartButton_Click(object? sender, RoutedEventArgs e)
     {
         if (isRunning)
         {
-            _timer.Stop();
+            timer.Stop();
             isRunning = false;
             StartButton.Content = "Iniciar";
         }
         else
         {
-            _timer.Start();
+            timer.Start();
             isRunning = true;
             StartButton.Content = "Pausar";
         }
@@ -42,7 +47,7 @@ public partial class MainWindow : Window
 
     private void ResetButton_Click(object? sender, RoutedEventArgs e)
     {
-        _timer.Stop();
+        timer.Stop();
         timeRemaining = TimeSpan.FromMinutes(25);
         isRunning = false;
         UpdateTExt();
@@ -58,7 +63,7 @@ public partial class MainWindow : Window
         }
         else
         {
-            _timer.Stop();
+            timer.Stop();
             isRunning = false;
             TimerText.Text = "Descanso!";
         }
