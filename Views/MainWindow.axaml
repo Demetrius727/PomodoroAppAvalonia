@@ -1,0 +1,22 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="ProjectAvaloniaTest.Views.MainWindow"
+        Title="Pomodoro"
+        Width="400"
+        Height="300">
+    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Spacing="10">
+        <Border Margin="5" CornerRadius="10" Background="LightBlue">
+             <TextBlock x:Name="TimerText" Text="25:00" FontSize="48" Foreground="Black" HorizontalAlignment="Center"/>
+        </Border>      
+        <Button x:Name="StartButton" Content="Iniciar" Width="200" Height="50"
+        HorizontalContentAlignment="Center"
+        VerticalContentAlignment="Center"
+        Click="StartButton_Click"/>
+        <Button x:Name="ResetButton" Content="Resetar" Width="200" Height="50"
+        HorizontalContentAlignment="Center"
+        VerticalContentAlignment="Center"
+        Click="ResetButton_Click"/>
+    </StackPanel>
+</Window>
+
+<!-- Link de inicio doc util para as implementações: https://docs.avaloniaui.net/docs/get-started/test-drive/add-a-control -->

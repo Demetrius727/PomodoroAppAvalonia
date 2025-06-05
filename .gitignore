@@ -1,0 +1,32 @@
+# Build Folders
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+*.userprefs
+*.vs/
+
+# Visual Studio Code settings
+.vscode/
+
+# Rider IDE settings
+.idea/
+
+# Logs
+*.log
+
+# Arquivos gerados pelo sistema
+*.DS_Store
+*.Thumbs.db
+
+# Pacotes NuGet
+*.nupkg
+packages/
+
+# Avalonia Designer arquivos temporários
+*.Designer.cs
+
+# Outros arquivos temporários
+*.tmp
